@@ -24,6 +24,10 @@ public class TankMovement : MonoBehaviour
         Vector2 pos = transform.position;
         pos.x += speed * Time.deltaTime;
         Vector2 squareInScreenSpace = Camera.main.WorldToScreenPoint(pos);
+        if ((Input.GetKeyUp(KeyCode.A)) || (Input.GetKeyDown(KeyCode.RightArrow)))
+        {
+            Debug.Log("hi".ToString());
+        }
 
         if (squareInScreenSpace.x < 0 || squareInScreenSpace.x > Screen.width)
         {
