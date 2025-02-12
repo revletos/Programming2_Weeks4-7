@@ -14,7 +14,6 @@ public class TurretAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Adjust to limit aim (See Pseudocode for more information)
         Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouse.z = 0;
         if (mouse.y > 0)
