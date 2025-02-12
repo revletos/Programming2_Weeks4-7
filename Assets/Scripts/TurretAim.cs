@@ -17,8 +17,16 @@ public class TurretAim : MonoBehaviour
         // Adjust to limit aim (See Pseudocode for more information)
         Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouse.z = 0;
-        Vector2 direction = mouse - transform.position;
+        if (mouse.y > 0)
+        {
+            Vector2 direction = mouse - transform.position;
 
-        transform.up = direction;
+            transform.up = direction;
+        }
+        else
+        {
+            Debug.Log("nope".ToString());
+        }
+        
     }
 }
